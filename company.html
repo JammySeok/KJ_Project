@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Imformation</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        main {
+            margin: 20px;
+        }
+
+        h1 {
+            margin-bottom: 0px;
+        }
+
+        h5 {
+            margin-top: 0px;
+        }
+
+        hr {
+            margin: 10px;
+        }
+
+        section>table {
+            margin: auto
+        }
+
+        tr img {
+            width: 450px;
+            height: 150px;
+        }
+
+        h4 {
+            margin-bottom: 0px;
+        }
+
+        ul {
+            margin: 0px;
+        }
+
+        #naver {
+            border-radius: 10px;
+            padding: 30px;
+        }
+
+        #naver .search {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+
+        #naver article {
+            margin: auto;
+            padding: 20px;
+            border: 1px solid gray;
+            border-radius: 10px;
+            width: 70%;
+        }
+
+        #naver article div {
+            padding-left: 50px;
+        }
+
+        #naver input {
+            margin-left: 20px;
+            margin-right: 20px;
+            height: 30px;
+            width: 80%;
+            font-size: 25px;
+        }
+
+        #naver .introduce {
+            border: 1px solid gray;
+            border-radius: 10px;
+            margin: 20px;
+            padding: 10px;
+            width: 700px;
+        }
+
+        #naver .naver-content img {
+            height: 50px;
+            width: 50px;
+        }
+
+        #naver .naver-content img:hover {
+            height: 80px;
+            width: 80px;
+        }
+
+        #kakao {
+            margin: auto;
+            width: 1000px;
+            background-color: rgb(186, 206, 224);
+            padding: 0px;
+        }
+
+        #kakao>div {
+            display: flex;
+            margin: 30px;
+        }
+
+        #kakao header {
+            display: flex;
+            padding: 50px;
+        }
+
+        #kakao .tellMe-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        #kakao .tellMe {
+            display: inline-block;
+            width: auto;
+            margin: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgb(250, 225, 0);
+        }
+
+        #kakao .tellKakao {
+            display: inline-block;
+            margin: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            width: 75%;
+        }
+
+        #kakao footer {
+            margin: 0px;
+            height: 200px;
+            background-color: white;
+        }
+
+        #kakao footer textarea {
+            border: 0px;
+            padding: 10px;
+            font-size: 30px;
+        }
+
+        #kakao footer button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            height: 50px;
+            width: 100px;
+            border: 0px;
+            background-color: rgb(250, 225, 0);
+            font-size: 20px;
+        }
+
+        #woowa {
+            margin: auto;
+            width: 1000px;
+        }
+
+        #woowa .header-up {
+            display: flex;
+            position: relative;
+            align-items: center;
+        }
+
+        #woowa .header-up input {
+            position: absolute;
+            right: 30px;
+            bottom: 15px;
+            height: 30px;
+            border-radius: 30px;
+            background-color: white;
+        }
+
+        #woowa .header-down {
+            display: flex;
+            position: relative;
+            margin-left: 30px;
+            align-items: center;
+        }
+
+        #woowa .header-down input {
+            position: absolute;
+            right: 30px;
+            bottom: 25px;
+            height: 30px;
+            border-radius: 30px;
+        }
+
+        #woowa header {
+            background-color: white;
+            box-shadow: 0px 2px gray;
+        }
+
+        #woowa>article>div {
+            background-color: white;
+            margin-top: 20px;
+            padding: 10px;
+            box-shadow: 0px 2px gray;
+        }
+
+        @media(max-width:1000px) {
+            td {
+                display: block;
+                text-align: center;
+            }
+
+            #introduce {
+                width: auto;
+
+                article {
+                    width: auto;
+                }
+            }
+        }
+    </style>
+    <script>
+        // 회사 이미지 클릭하면 내용 표시
+        function showContent(company) {
+            document.querySelectorAll('.container').forEach(function (el) {
+                el.style.display = 'none';
+            });
+
+            document.getElementById(company).style.display = 'block';
+        }
+    </script>
+</head>
+
+<body onload="startClock()">
+    <nav>
+        <a href="index.html">Introduction</a>
+        <a href="#">Company</a>
+        <a href="Plan.html">Plan</a>
+        <a href="about.html">About</a>
+    </nav>
+    <main>
+        <header>
+            <h1>더 나은 스팩을 만들기위해 현재 IT쪽으로 잘 나가는 기업 네이버, 카카오, 배달의민족에 대해서 알아보자! </h1>
+            <h5>[출처 : 사람인 / 각 홈페이지 채용정보 사이트]</h5>
+        </header>
+        <hr>
+        <section>
+            <table>
+                <thead>
+                    <tr>
+                        <td>이미지를 클릭해보아요</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> <img src="img/naver.png" onclick="showContent('naver')"> </td>
+                        <td> <img src="img/kakao.jpg" onclick="showContent('kakao')"> </td>
+                        <td> <img src="img/woowa.jpg" onclick="showContent('woowa')"> </td>
+                    </tr>
+                </tbody>
+                </th>
+            </table>
+            <hr>
+            <div class="container" id="naver" style="display: none;">
+                <!-- <h2>NAVER</h2> -->
+                <div class="search">
+                    <img src="img/naver_icom.png" style="height: 30px; width: 30px;">
+                    <input type="text" value=" 네이버">
+                    <img src="img/search.png" style="height: 30px; width: 30px;">
+                </div>
+                <hr style="background:rgb(3, 199, 90); height:1px;">
+                <article>
+                    <div class="introduce">
+                        <h3>네이버(주)</h3>
+                        <table style="margin-left: 30px;">
+                            <tbody>
+                                <tr>
+                                    <td style="width: 100px; color: gray;">대표자</td>
+                                    <td>최수연</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px; color: gray;">기업구분</td>
+                                    <td>네이버 계열, 코스피 상장</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px; color: gray;">업종</td>
+                                    <td>포털 및 기타 인터넷 정보매개 서비스업</td>
+                                </tr>
+                                <tr>
+                                    <td style="width: 100px; color: gray;">제품/사업</td>
+                                    <td>인터넷검색사이트 운영, 인터넷 방송, 컨텐츠 검색, 고도 정보통신 서비스, 게임컨텐츠 제공, 광고대행</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <br><br>
+                    <img src="img/naver_Q.png" style="height: 18px; width:18px">
+                    네이버는 어떤 회사인가요?
+                    <div>
+                        <p>
+                            네이버는 대한민국의 대표 포털 사이트로 검색 엔진 등 포털 서비스를 중심으로 블로그, 카페, 포스트 등의 커뮤니티 서비스를 비롯하여 뉴스, 스포츠,
+                            연예, 쇼핑 등 다양한 콘텐츠 주제판을 제공하고 있습니다. <br>
+                            포털 서비스 뿐만 아니라 Frontend/Backend, Android/iOS, AI/ML, Data Engineering, Embedded SW, 클라우드
+                            Graphics 등의 기술들을 이용해서 많은 서비스들을 고객들에게 제공하고있는 IT회사입니다! 이러한 기술들을 이용해서 AiTEMS, 툰레이더, 쇼핑챗봇,
+                            쇼핑라이브, 클러바MD, 라이브쳇, 메시지카케팅, 포라이팅 등의 서비스를 제공하고 있어요.
+                        </p>
+                    </div>
+                    <br><br>
+                    <img src="img/naver_Q.png" style="height: 18px; width:18px">
+                    네이버가 제공하는 컨텐츠는 무엇이 있나요?
+                    <div class="naver-content">
+                        <p> 네이버가 제공하는 대표적인 컨텐츠는 아래와 같습니다. 이미지를 클릭하면 해당 사이트로 갈 수 있어요! </p>
+                        <a href="https://band.us" target="_blank"><img src="img/naverband.png"></a>
+                        <a href="https://comic.naver.com" target="_blank"><img src="img/naverwebtoon.jpg"></a>
+                        <a href="https://series.naver.com/novel/home.series" target="_blank"> <img
+                                src="img/naverseries.png"></a>
+                        <a href="https://chzzk.naver.com" target="_blank"> <img src="img/naverchzzk.png"></a>
+                        <a href="https://vibe.naver.com" target="_blank"> <img src="img/navervibe.png"></a>
+                        <a href="https://mybox.naver.com" target="_blank"> <img src="img/navermybox.png"></a>
+                        <a href="https://clova.ai/" target="_blank"> <img src="img/naverclova.png"></a>
+                    </div>
+                    <br><br>
+                    <img src="img/naver_Q.png" style="height: 18px; width:18px">
+                    네이버의 백엔드 개발자로 취업하기 위해 어떤 조건 필요한가요??
+                    <div>
+                        <h4>저희와 함께 하시는 일 (기술 성장의 기회)</h4>
+                        <ul>
+                            <li> EDA, MSA 기반의 Modern 아키텍처 및 DDD 중심 개발</li>
+                            <li> DDD, SRE, Acceptnace Test 등을 통해 시스템 변화와 안정성 향상을 동시에 추구</li>
+                            <li> 실 트래픽 기반 자동화된 테스트 환경 구축 및 CQRS/CQS패턴 도입하여 더욱 나은 환경으로 변화</li>
+                            <li> Quality Practice (a.k.a 애자일 프랙티스 및 기술 실천법)</li>
+                            <li> 그리고 이 모든 변화는 대량의 트래픽을 받으며 무정지로 수행합니다.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>함께 일하기 위해 필요한 기술 역량</h4>
+                        <ul>
+                            <li> 개발 표준 수립 및 구현 전략</li>
+                            <li> Java 기반 웹 어플리케이션 개발</li>
+                            <li> Spring Framework 이해 및 활용</li>
+                            <li> 웹 프로토콜 및 인프라에 대한 이해</li>
+                            <li> 객체지향 개발, 리팩토링, 자동화 테스트에 대한 기본 지식 보유</li>
+                            <li> NoSQL 데이터 설계 및 운영 경험</li>
+                            <li> 대용량 트래픽을 견디기 위해 견고한 코드 및 시스템 구성</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4>알고 있다면 더 좋은 우대 기술 역량</h4>
+                        <ul>
+                            <li> 우대 기술을 보유하면 좋겠지만 꼭 그럴 필요는 없습니다. 저희 조직과 동료들이 함께 성장할 수 있도록 도와 드립니다.</li>
+                            <li> 프레임워크 선택 및 사용에 있어 프레임워크가 책임져야 할 범위를 명확히 인식하고 동작에 문제가 없는지 의심하고 사용하시는 분</li>
+                            <li> 신기술에 대한 호기심을 가지고 있고, 이를 사용하는 것을 즐기시는 분</li>
+                            <li> 대용량 트래픽을 견디기 위해 필요한 코드와 시스템을 구성</li>
+                            <li> Software 설계 및 구현 (a.k.a Clean Code, Patterns Design & Implement)</li>
+                            <li> Micro Service Architecture 이해 및 경험</li>
+                            <li> Event driven architecture 이해 및 경험</li>
+                            <li> Domain driven design 경험 및 지식</li>
+                            <li> CQRS / CQS 패턴 도입 및 적용 및 MSA 확장 및 개선 경험</li>
+                            <li> Scala, Spark, Hadoop 활용한 대용량 실시간 데이터 스트리밍 처리 경험</li>
+                            <li> k8s 환경 하의 Modern 아키텍처 경험 및 지식</li>
+                            <li> Agile Methodology & Practice 경험 및 지식</li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+
+            <div class="container" id="kakao" style="display: none;">
+                <!-- <h2>KAKAO</h2> -->
+
+                <header style>
+                    <img src="img/kakaoIcon.png" style="height: 70px; width: 70px">
+                    <p style="margin: 0px; padding-left: 20px; font-size: 50px;"> kakao</p>
+                </header>
+
+                <div class="tellMe-container">
+                    <div class="tellMe">
+                        카카오는 어떤 회사에요?
+                    </div>
+                </div>
+
+                <div>
+                    <img src="img/kakaoIcon.png" style="height: 70px; width: 70px">
+                    <div>
+                        <p style="margin: 0px; padding-left: 20px; font-size: 30px;"> kakao</p>
+                        <div class="tellKakao">
+                            저희는 대한민국의 대표 IT 기업으로, 핵심 사업인 카카오톡을 기반으로 성장해 현재는 다양한 온라인 서비스를 제공하고 있습니다.
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tellMe-container">
+                    <div class="tellMe">
+                        카카오에 웹 개발자로 취업하기위해서는 무엇을 할줄 알아야하나요?
+                    </div>
+                </div>
+
+                <div>
+                    <img src="img/kakaoIcon.png" style="height: 70px; width: 70px">
+                    <div>
+                        <p style="margin: 0px; padding-left: 20px; font-size: 30px;"> kakao</p>
+                        <div class="tellKakao">
+                            업무내용
+                            <ul>
+                                <li> 전사 자산관리 CMDB 서비스 개발/운영/유지보수</li>
+                                <li> 전사 유휴시스템 관리 서비스 개발/운영/유지보수</li>
+                                <li> 인프라 서비스 통합/자동화를 위한 플랫폼 개발/운영/유지보수</li>
+                            </ul>
+                            <br>
+                            지원자격
+                            <ul>
+                                <span style="margin-left: -20px;">[ 공통 필수 사항 ]</span>
+                                <li>개발 경력 만 5년 이상</li>
+                                <li>Git, JIRA, Jenkins 등의 업무 도구에 익숙하신 분</li>
+                                <li>리눅스 시스템, 네트워크에 대한 기본적인 이해 및 경험</li>
+                                <li>Docker, Kubernetes 등 컨테이너 오케스트레이션에 대한 이해 및 경험</li>
+                                <br>
+                                <span style="margin-left: -20px;">[ Backend 개발자 지원자격 ]</span>
+                                <li>Linux 플랫폼에서 웹 서비스 개발/운영</li>
+                                <li>Java/Spring 기반 웹 서비스 개발 경력</li>
+                                <li>Spring Boot 기반 웹 애플리케이션 개발 경험</li>
+                                <li>리눅스 시스템, 네트워크에 대한 기본적인 이해 및 경험</li>
+                                <br>
+                                <span style="margin-left: -20px;">[ Frontend 개발자 지원자격 ]</span>
+                                <li>ReactJS 기반 프론트엔드 개발 경력</li>
+                                <li>Javascript, HTML, CSS에 익숙하신 분</li>
+                            </ul>
+                            <br>
+                            우대사항
+                            <ul>
+                                <span style="margin-left: -20px;">[ 공통 사항 ]</span>
+                                <li> 소프트웨어의 품질 향상을 지속적으로 고민하시는 분</li>
+                                <li> 능동적인 기능 제안 및 개선 의지가 강하신 분</li>
+                                <li> 빌드/테스트/배포 자동화 경험이 있으신 분</li>
+                                <br>
+                                <span style="margin-left: -20px;">[ Backend 개발자 우대사항 ]</span>
+                                <li> Spring Batch를 통한 작업 경험이 있으신 분</li>
+                                <li> SQL에 대한 이해도가 높으신 분</li>
+                                <li> PostgreSQL, MySQL 등 다양한 RDBMS 에 대한 경험이 있으신 분</li>
+                                <li> Redis, Kafka, Elasticsearch 등 오픈소스 플랫폼에 대한 이해와 경험이 있으신 분</li>
+                                <li> 대용량 트래픽의 인프라 서비스에 대한 개발 및 운영 경험이 있으신 분</li>
+                                <br>
+                                <span style="margin-left: -20px;">[ Frontend 개발자 우대사항 ]</span>
+                                <li> TypeScript에 익숙하신 분</li>
+                                <li> Next.js에 익숙하신 분</li>
+                                <li> 사용자 경험을 중요하게 여기시는 분</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>         
+
+                <footer>
+                    <textarea id="newDivText" cols="60" rows="3" placeholder="입력하세요"></textarea><br>
+                    <button onclick="addItem()">전송</button>
+                </footer>
+            </div>
+
+
+            <script>
+                // 채팅기능 구현
+                function addItem() {
+                    var text = document.getElementById("newDivText").value;
+                    if(text.trim() == "") {
+                        alert("내용을 입력하세요.");
+                        return;
+                    }
+
+                    var newDiv = document.createElement("div");
+                    newDiv.classList.add("tellMe-container");
+
+                    var childDiv = document.createElement("div");
+                    childDiv.classList.add("tellMe");
+                    childDiv.textContent = text;
+                    newDiv.appendChild(childDiv);
+
+                    var kakao = document.getElementById("kakao");
+                    var footer = kakao.querySelector("footer");
+
+                    kakao.insertBefore(newDiv, footer);
+
+                    document.getElementById("newDivText").value = "";
+                }   
+            </script>
+
+            <div class="container" id="woowa" style="display: none;">
+                <!-- <h2>우아한형제들</h2> -->
+                <img src="img/woowaimg.png" style="height: auto; width: 1000px;">
+                <article style="background-color: rgb(222,226,230);">
+                    <header>
+                        <p style="margin-bottom: 0px; font-size: 30px;"><strong>배달의민족</strong></p>
+                        <div class="header-up">
+                            <img src="img/star.png" style="height: 30px; width: 30px">
+                            <p style="margin: 10px; font-size: 20px;"> <b>5.0</b></p>
+                            <p style="margin-left: 20px;">리뷰 999개 ></p>
+                            <a href="https://baemin.com" target="_blank"> <input type="button" value="배달의민족"></a>
+                        </div>
+                        <hr>
+                        <div class="header-down">
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td style="width: 100px; color: gray"><b>운영사</b></td>
+                                        <td>우아한형제들</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100px; color: gray"><b>설립일</b></td>
+                                        <td>2011년 3월 10일</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="width: 100px; color: gray"><b>주소</b></td>
+                                        <td style="width: 400px;">서울특별시 송파구 위례성대로 2 (방이동) 장은빌딩</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <a href="https://www.woowahan.com" target="_blank"> <input type="button" value="자세히"></a>
+                        </div>
+                        <hr>
+
+                        <p style="margin:0px; padding: 20px; text-align: center; font-size: 25px;"><b>❤️ 999+</b></p>
+                    </header>
+
+                    <div>
+                        <h2>우아한형제들</h2>
+                        <div>
+                            배달의민족은 한국에서 매우 인기 있는 음식 주문 및 배달 플랫폼 중 하나로, 사용자들은 모바일 애플리케이션을 통해 음식을 주문하고 배달 서비스를 이용할 수 있습니다.
+                            저희 회사는 기술 혁신과 고객 중심의 서비스로 주목받고 있으며, 사용자들에게 편리하고 안전한 음식 주문 및 배달 경험을 제공하기 위해 끊임없이 노력하고 있습니다.
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2>제공하는 서비스</h2>
+                        <div>
+                            - 배민메뉴시스템팀은 하나의 목적조직으로 플랫폼 기획자(PM), 서버 개발자, 프론트 개발자로 구성되어 있습니다.
+                            - 서버 개발자는 메뉴 도메인의 백엔드 시스템과 API를 개발합니다.
+                            - 정해진 정책을 가지고 구현하는 것이 아닌, 팀에 있는 플랫폼 기획자(PM)와 정책을 논의하며 만들어갈 수 있습니다.
+                            - 지속적인 시스템 모니터링을 통해 성능 개선 업무를 진행합니다.
+                            - 우아한형제들 개발자는 서비스인프라실에서 제공하는 다양한 서비스를 이용하여 개발하고 모니터링을 할 수 있습니다.
+                            - 메뉴시스템의 개발문화를 발전시키며 더 크게 우아한 형제 개발문화를 함께 만들고 있습니다.
+
+                            - 고객에게 쿠폰 할인 혜택을 제공하는 쿠폰 시스템을 개발합니다.
+                            - 사장님들이 가게를 홍보할 수 있도록 도구를 제공하는 업주 혜택 시스템을 개발합니다.
+
+                            - 배달의민족 앱의 B마트, 배민스토어 등 커머스 서비스 운영/개발
+                            - 배민상회 앱 운영/개발
+
+                            - 우아한형제들에서 고객에게 안전한 가치를 제공하기 위한 개인정보보호 업무
+
+                        </div>
+                    </div>
+
+                    <div>
+                        <h2>백엔드 개발자 자격요건</h2>
+                        <div>
+                            지원자격
+                            <ul>
+                                <li>웹애플리케이션 개발, 운영을 경험한 실무 5년 이상 또는 이에 준하는 역량 보유자</li>
+                                <li>Java(또는 Kotlin), Spring Framework, JPA 환경에서 개발 경험이 있으신 분</li>
+                                <li>기본적인 Linux/Unix 명령 사용 능력을 보유하신 분</li>
+                                <li>상대방의 필요가 무엇인지 의도를 잘 이해하고 해결책을 제시하는 커뮤니케이션 스킬을 가지신 분</li>
+                                <li>항상 더 나은 방법을 고민하고 그 고민의 과정에 그것이 정말 팀과 회사에 유리한 것인지도 함께 고려하시는 분</li>
+                            </ul>
+                        </div>
+                        <div>
+                            우대사항
+                            <ul>
+                                <li>AWS 클라우드 환경에서 개발, 운영 경험이 있으신 분</li>
+                                <li>SNS, SQS, Kafka 등을 활용한 비동기 메시지 기반 개발 경험이 있으신 분</li>
+                                <li>Elasticsearch, MongoDB, Redis 등에 대한 사용 경험이 있으신 분</li>
+                                <li>JPA, Hibernate 등 ORM 사용과 도메인 모델링 경험이 있으신 분</li>
+                                <li>대용량 트래픽 환경에서의 성능 최적화 경험이 있으신 분</li>
+                                <li>각종 장애 극복 경험이 있으신 분</li>
+                                <li>품질 좋은 소프트웨어 개발을 위해 지속적으로 노력해 오신 분</li>
+                                <li>새로운 기술에 호기심이 많고 공유하시는 분, 코드 리뷰 등을 통해 주변 동료에게 자극을 주는 분</li>
+                                <li>기획/디자인/운영 등 다양한 직군과 같이 문제를 정의하고 해결책을 찾아나갈 수 있는 협업 능력을 갖춘 분</li>
+                            </ul>
+                        </div>
+                        <div>
+                            개발환경
+                            <ul>
+                                <li> 주요 기술 : Java, Kotlin, Spring Framework(MVC, WebFlux), JPA, Gradle</li>
+                                <li> 클라우드 : AWS</li>
+                                <li> 저장소 : MySQL, Elasticsearch, DynamoDB, Redis, MongoDB</li>
+                                <li> 메시징 : Kafka, AWS SNS/SQS</li>
+                                <li> 업무 도구 : Git, GitLab, Slack, Jira, Confluence, IntelliJ IDEA Ultimate, Docker,
+                                    GitHub
+                                    Copilot
+                                </li>
+                                <li> 코드 리뷰 / 코드 품질 관리 : GitLab Merge Request, SonarQube</li>
+                                <li> 테스트/빌드/배포 : JUnit, GitLab CI, Jenkins</li>
+                                <li> 모니터링 : Grafana, Prometheus, Loki, Pinpoint, OpenTelemetry</li>
+                            </ul>
+                        </div>
+                    </div>
+                </article>
+        </section>
+    </main>
+
+    <footer>
+        <h3>CONTACT ME</h3>
+        010-5115-1678 / jjh326326@naver.com
+        <p id="clock" style="background-color: aliceblue;"></p>
+    </footer>
+
+    <script>
+        // 현재 페이지 머무른 시간
+        var startTime;
+
+        function startClock() {
+            startTime = new Date();
+            var clock = document.getElementById("clock");
+            setInterval("stayTime(clock)", 1000);
+        }
+
+        function stayTime(obj) {
+            var currentTime = new Date();
+            var time = (currentTime - startTime) / 1000;
+            var secTime = parseInt(time);
+            var minTime = parseInt(secTime / 60);
+            var horTime = parseInt(minTime / 60);
+
+            if(minTime > 60) obj.innerHTML = "현재 페이지 머문 시간: " + horTime + "시간" + minTime % 60 + "분" + secTime % 60 + "초";
+            else if(secTime > 60) obj.innerHTML = "현재 페이지 머문 시간: " + minTime % 60 + "분" + secTime % 60 + "초";
+            else obj.innerHTML = "페이지 머문 시간: " + secTime % 60 + "초";
+
+            if(minTime == 30) { 
+                alert("30분이 지났어요.");
+                obj.style.background = "yellow";
+            }
+            else if(horTime == 1) { 
+                alert("1시간이 지났어요.");
+                obj.style.background = "red";
+            }
+        }
+    </script> 
+</body>
+
+</html>

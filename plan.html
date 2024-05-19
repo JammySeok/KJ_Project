@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Plan</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="imgModal.css">
+    <style>
+        section {
+            padding: 10px;
+        }
+
+        fieldset {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid gray;
+            display: inline-block;
+        }
+
+        legend h2 {
+            margin: 0px;
+        }
+
+        h4 {
+            margin: 0px;
+        }
+
+        td img {
+            width: 200px;
+            height: 100px;
+        }
+
+        table {
+            text-align: center;
+            border-collapse: collapse;
+        }
+
+        .certificate th {
+            padding: 10px;
+            background-color: gray;
+            color: yellow;
+        }
+
+        .certificate td {
+            background-color: khaki;
+            padding: 10px;
+        }
+    </style>
+    <script>
+        // 이미지 모달 기능 구현
+        function openModal(src) {
+            var modal = document.getElementById("Modal");
+            var modalImg = document.getElementById("modalImg");
+            modal.style.display = "block";
+            modalImg.src = src;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("Modal");
+            modal.style.display = "none";
+        }
+
+        // 체크박스 표시
+        function chkVisibility(checkboxId, divId) {
+            var checkbox = document.getElementById(checkboxId);
+            var div = document.getElementById(divId);
+            div.style.visibility = checkbox.checked ? 'visible' : 'hidden';
+        }
+
+        // 테이블 만들기
+        function createTable(row, column, strTH, strTD) {
+            document.write("<table> <thead> <tr>");
+            
+            for (var i = 0; i < column; i++) 
+                document.write("<th>" + strTH[i] + "</th>");
+            
+            document.write("</tr> </thead> <tbody>");
+            
+            for (var i = 0; i < row; i++) {
+                document.write("<tr>");   
+                for (var j = 0; j < column; j++) 
+                    document.write("<td>" + strTD[i][j] + "</td>");            
+                document.write("</tr>");
+            }
+            document.write("</tbody> </table>");
+        }
+    </script>
+</head>
+
+<body onload="startClock()">
+    <nav>
+        <a href="index.html">Introduction</a>
+        <a href="company.html">Company</a>
+        <a href="#">Plan</a>
+        <a href="about.html">About</a>
+    </nav>
+    <header>
+        <h1></h1>
+    </header>
+
+    <section>
+        <fieldset class="project">
+            <h3>공부 목적</h4>
+                <legend>
+                    <h2>스프링 프레임워크를 사용해서 프로젝트 만들기</h2>
+                </legend>
+                <ul>
+                    <li> 프로젝트를 진행하면서 스프링의 프레임워크를 익힌다.</li>
+                    <li> 여려가지 기술의 개념을 이해하고 접목시킨다. (MVC 패턴, JPA, REST API, Database, HTTP 등)</li>
+                </ul>
+                <br>
+                <h3>A. 게시판 작성 등록 및 댓글 서비스 구현</h3>
+                <p>(기초) 웹을 운영하면서 필요한 기술의 개념을 이해하고 접목시키는 연습한다.</p>
+                <table>
+                    <thead>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> <img src="img/article_main.png" style="width: 200px; height: 100px;"
+                                    onclick="openModal(this.src)"> </td>
+                            <td> <img src="img/article.png" style="width: 200px; height: 100px;"
+                                    onclick="openModal(this.src)"> </td>
+                        </tr>
+                    </tbody>
+                    </th>
+                </table>
+                <br>
+                <h3>B. 웹을 이용해서 리듬게임 제작</h3>
+                <p>(개인) 평소 좋아하는 건반형 리듬게임을 내가 직접 웹을 통해 직접 만들어보자</p>
+                <table>
+                    <thead>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> <img src="img/game_main.png" style="width: 200px; height: 100px;"
+                                    onclick="openModal(this.src)"> </td>
+                            <td> <img src="img/login.png" style="width: 200px; height: 100px;"
+                                    onclick="openModal(this.src)"> </td>
+                        </tr>
+                        <tr>
+                            <td> <img src="img/game.png" style="width: 200px; height: 100px;"
+                                    onclick="openModal(this.src)"> </td>
+                            <td> <img src="img/score.png" style="width: 200px; height: 100px;"
+                                    onclick="openModal(this.src)"> </td>
+                        </tr>
+                    </tbody>
+                    </th>
+                </table>
+        </fieldset>
+
+        <fieldset calss="coding">
+            <legend>
+                <h2>코딩테스트 준비</h2>
+            </legend>
+            <p>중견기업의 기업을 목표로 한다면 꼭 준비해야하는 코딩테스트! 어떻게 준비할까?</p>
+
+            <ul>
+                <span style="margin-left: -20px;">자료구조/알고리즘 이론 공부</span>
+                <li>자료구조 (연결리스트, 스택, 큐, 트리, 그래프, 해시테이블)</li>
+                <li>정렬 알고리즘 (퀵정렬, 힙정렬, 병합정렬 등...)</li>
+                <li>탐색 알고리즘(이진탐색, 해시탐색, BFS, DFS)</li>
+                <li>그리디 알고리즘</li>
+                <li>동적 계획법</li>
+                <br>
+                <span style="margin-left: -20px;">프로그래밍 문제 풀어보기 (이론 적용)</span>
+                <li><a href="https://www.acmicpc.net/" target="_blank">BACKJOON</a> -> (<a href="https://solved.ac/"
+                        target="_blank">solved</a> 등급 골드1 까지 승급)</li>
+                <li>BAEKJOON 대회 참여</li>
+                <li>내 solved 프로필 : <a href="https://solved.ac/profile/zvcck" target="_blank">solved.ac/profile/zvcck</a>
+                </li>
+            </ul>
+        </fieldset>
+
+        <fieldset class="certificate">
+            <legend>
+                <h2>정보처리기사 자격증 취득</h2>
+            </legend>
+            <h3>
+                정보처리기사
+                ( <input type="checkbox" id="chk1" onchange="chkVisibility('chk1', 'div1')"> 시험 출제기준
+                <input type="checkbox" id="chk2" onchange="chkVisibility('chk2', 'div2')"> 시험 공부 전략
+                <input type="checkbox" id="chk3" onchange="chkVisibility('chk3', 'div3')"> 시험 일정 )
+            </h3>
+
+            <div id="div1" style="visibility: hidden;">
+                <h4>정보처리기사 필기 (과목당 40점 이상, 평균 60점 이상)</h4>
+                <ul>
+                    <li> 1과목 - 소프트웨어 설계 </li>
+                    <li> 2과목 - 소프트웨어 개발 </li>
+                    <li> 3과목 - 데이터베이스 구축 </li>
+                    <li> 4과목 - 프로그래밍 언어 활용 </li>
+                    <li> 5과목 - 정보시스템 구축 관리 </li>
+                </ul>
+                <br>
+                <h4>정보처리기사 실기 (점수 60점 이상)</h4>
+                <ul>
+                    <li> 요구사항 확인 </li>
+                    <li> 데이터 입출력 구현 </li>
+                    <li> 통합 구현 </li>
+                    <li> 서버프로그램 구현 </li>
+                    <li> 인터페이스 구현 </li>
+                    <li> 화면 설계 </li>
+                    <li> 애플리케이션 테스트 관리 </li>
+                    <li> SQL 응용 </li>
+                    <li> 소프트웨어 개발 보안 구축 </li>
+                    <li> 프로그래밍 언어 활용 (C/C++, Java, Python) </li>
+                    <li> 응용 SW 기초 기술 활용 </li>
+                    <li> 제품소프트웨어 패키징 </li>
+                </ul>
+                <h4>(download) <a href="download/정보처리기사 출제기준(2023.1.1.~2025.12.31).hwp">정보처리기사
+                        출제기준(2023.1.1.~2025.12.31)</a></h4>
+            </div>
+
+            <br>
+
+            <div id="div2" style="visibility: hidden;">
+                <h3>시험 공부 전략</h3>
+                <h4>필기시험</h4>
+                <p>필기시험: 대학 3학년 과정에 소프트웨어공학과 데이터베이스론 수업이 있기 때문에 필기의 1과목, 3과목은 공부하기 쉬울것이라 생각한다.
+                    필기시험은 책이 없이도 전년도 문제들을 많이 풀어보고 그 문제에 대해서 이해할 수 있다면 충분히 합격할 수 있을것이다. <br>
+                    문제은행 사이트 - 전자문제집 CBT(<a href="https://www.comcbt.com" target="_blank">https://www.comcbt.com</a>)
+                </p>
+                <br>
+                <h4>실기시험</h4>
+                <p>실기시험 :실기도 필기와 마찬가지로 소프트웨어공학과 데이터베이스의 내용이 중복되기 때문에 필기를 준비할때 이 두부분은 확실히 하고,
+                    코딩(C, JAVA)과 보안 부분은 평소에 자신있는 분야였기 때문에 알고있는 지식이 있어 그리 어렵지않게 공부를 할 수 있을것이다.
+                    나머지는 아래의 책을 보며 이론적인 공부를 하고 연습문제(모의고사)를 풀면 합격할 수 있을것이다. <br>
+                    책 : 기사퍼스트 정보처리기사 실기(권우석)</p>
+            </div>
+
+            <br>
+
+            <div id="div3" style="visibility: hidden;">
+                <h3>기사시험 일정 (2024기준) - 큐넷(<a href="https://www.q-net.or.kr" target="_blank">https://www.q-net.or.kr</a>)
+                </h3>
+                <script>
+                    var row = 3, column = 7;
+                    var strTH = ["회차", "원서접수", "필기시험", "필기 합격자발표", "실기 원서접수", "실기시험", "최종 합격자 발표"];
+                    var strTD = [
+                        ["1회차", "01.23 ~ 01.26", "02.15 ~ 03.07", "03.13", "03.26 ~ 03.29", "04.27 ~ 05.12", "05.29 ~ 06.18"],
+                        ["2회차", "04.16 ~ 04.19", "05.09 ~ 05.28", "06.05", "06.25 ~ 06.28", "07.28 ~ 08.14", "08.28 ~ 09.10"],
+                        ["3회차", "06.18 ~ 06.21", "07.05 ~ 07.27", "08.07", "09.10 ~ 09.13", "10.19 ~ 11.08", "11.20 ~ 12.11"]
+                    ]; 
+                    createTable(row, column, strTH, strTD);
+                </script>
+            </div>
+        </fieldset>
+    </section>
+
+    <div id="Modal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+    <footer>
+        <h3>CONTACT ME</h3>
+        010-5115-1678 / jjh326326@naver.com
+        <p id="clock" style="background-color: aliceblue;"></p>
+    </footer>
+
+    <script>
+        // 현재 페이지 머무른 시간
+        var startTime;
+
+        function startClock() {
+            startTime = new Date();
+            var clock = document.getElementById("clock");
+            setInterval("stayTime(clock)", 1000);
+        }
+
+        function stayTime(obj) {
+            var currentTime = new Date();
+            var time = (currentTime - startTime) / 1000;
+            var secTime = parseInt(time);
+            var minTime = parseInt(secTime / 60);
+            var horTime = parseInt(minTime / 60);
+
+            if(minTime > 60) obj.innerHTML = "현재 페이지 머문 시간: " + horTime + "시간" + minTime % 60 + "분" + secTime % 60 + "초";
+            else if(secTime > 60) obj.innerHTML = "현재 페이지 머문 시간: " + minTime % 60 + "분" + secTime % 60 + "초";
+            else obj.innerHTML = "페이지 머문 시간: " + secTime % 60 + "초";
+
+            if(minTime == 30) { 
+                alert("30분이 지났어요.");
+                obj.style.background = "yellow";
+            }
+            else if(horTime == 1) { 
+                alert("1시간이 지났어요.");
+                obj.style.background = "red";
+            }
+        }
+    </script>
+</body>
+
+</html>

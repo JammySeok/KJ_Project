@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>글자 애니메이션</title>
+</head>
+<body>
+
+<p id="hello">안녕하세요. 홍길동입니다.
+만나서 반갑습니다.</p>
+
+<script>
+    var text = document.getElementById('hello').innerHTML;
+    var lines = text.split('\n'); // 줄 단위로 분리
+    document.getElementById('hello').innerHTML = '';
+
+    var index = 0;
+    var lineIndex = 0;
+    var interval = setInterval(show, 300);
+
+    function show() {
+        if (lineIndex < lines.length) {
+            var line = lines[lineIndex];
+            var characters = line.split('');
+            if (index < characters.length) {
+                document.getElementById('hello').innerHTML += characters[index];
+                index++;
+            } else {
+                document.getElementById('hello').innerHTML += '<br>'; // 줄 바꿈
+                lineIndex++;
+                index = 0;
+            }
+        } else {
+            clearInterval(interval);
+        }
+    }
+</script>
+
+</body>
+</html>

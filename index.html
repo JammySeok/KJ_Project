@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduce Myself</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            width: 100%;
+            height: auto;
+        }
+
+        img {
+            padding: 10px;
+            width: 300px;
+            height: 400px;
+        }
+
+        .introduce {
+            display: flex;
+            flex-direction: column;
+            margin: 50px;
+            padding: 10px;
+            height: auto;
+        }
+
+        h2 {
+            margin: 10px;
+        }
+
+        section .introduce div p {
+            border: 1px solid gray;
+            margin: 0px;
+            padding: 20px;
+            width: 500px;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        @media(max-width:1000px) {
+            .content {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
+
+</head>
+
+<body onload="startClock()">
+    <nav>
+        <a href="#">Introduction</a>
+        <a href="company.html">Company</a>
+        <a href="Plan.html">Plan</a>
+        <a href="about.html">About</a>
+    </nav>
+
+    <header> </header>
+
+    <section>
+        <div class="content">
+            <img src="img/jus.jpg">
+            <div class="introduce">
+                <div>
+                    <h2>ABOUT ME</h2>
+                    <p id="hello"> 백엔드 개발자를 꿈꾸고 있는 학생입니다! 저의 꿈을 응원해 주세요.
+                        꿈을 향해서 열심히 달려나가겠습니다. </p>
+                </div>
+                <br>
+                <div title="아직은 부족하지만 나중에는 할수있는게 많아질거에요!">
+                    <h2>CAPABILITY</h2>
+                    <p>HTML/CSS/JS, C, JAVA, Database, LINUX</p>
+                </div>
+                <br>
+                <div>
+                    <h2>CERTIFICATE</h2>
+                    <p>정보처리산업기사, 컴퓨터활용능력 1급, 워드프로세서</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        var text = document.getElementById('hello').innerHTML;
+        var lines = text.split('\n');
+        document.getElementById('hello').innerHTML = '';
+
+        var index = 0;
+        var lineIndex = 0;
+        
+        setInterval(show, 200);
+
+        function show() {
+                var line = lines[lineIndex];
+                var characters = line.split('');
+                if (index < characters.length) {
+                    document.getElementById('hello').innerHTML += characters[index];
+                    index++;
+                } 
+                else {
+                    document.getElementById('hello').innerHTML += '<br>'; 
+                    lineIndex++;
+                    index = 0;
+                }
+                         
+        }
+    </script>
+
+    <footer>
+        <h3>CONTACT ME</h3>
+        010-5115-1678 / jjh326326@naver.com
+        <p id="clock" style="background-color: aliceblue;"></p>
+    </footer>
+
+    <script>
+        // 현재 페이지 머무른 시간
+        var startTime;
+
+        function startClock() {
+            startTime = new Date();
+            var clock = document.getElementById("clock");
+            setInterval("stayTime(clock)", 1000);
+        }
+
+        function stayTime(obj) {
+            var currentTime = new Date();
+            var time = (currentTime - startTime) / 1000;
+            var secTime = parseInt(time);
+            var minTime = parseInt(secTime / 60);
+            var horTime = parseInt(minTime / 60);
+
+            if(minTime > 60) obj.innerHTML = "현재 페이지 머문 시간: " + horTime + "시간" + minTime % 60 + "분" + secTime % 60 + "초";
+            else if(secTime > 60) obj.innerHTML = "현재 페이지 머문 시간: " + minTime % 60 + "분" + secTime % 60 + "초";
+            else obj.innerHTML = "페이지 머문 시간: " + secTime % 60 + "초";
+
+            if(minTime == 30) { 
+                alert("30분이 지났어요.");
+                obj.style.background = "yellow";
+            }
+            else if(horTime == 1) { 
+                alert("1시간이 지났어요.");
+                obj.style.background = "red";
+            }
+        }
+    </script>
+</body>
+
+</html>
