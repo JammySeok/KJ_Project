@@ -1,41 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>글자 애니메이션</title>
+    <meta charset="UTF-8">
+    <title>캔버스 그리기 맛보기</title>
 </head>
 <body>
+    <h1>캔버스 그리기</h1>
+    <hr>
+    <canvas id="myCanvas" style="background-color: aliceblue;" width="60" height="55"></canvas>
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var context = canvas.getContext("2d");
 
-<p id="hello">안녕하세요. 홍길동입니다.
-만나서 반갑습니다.</p>
-
-<script>
-    var text = document.getElementById('hello').innerHTML;
-    var lines = text.split('\n'); // 줄 단위로 분리
-    document.getElementById('hello').innerHTML = '';
-
-    var index = 0;
-    var lineIndex = 0;
-    var interval = setInterval(show, 300);
-
-    function show() {
-        if (lineIndex < lines.length) {
-            var line = lines[lineIndex];
-            var characters = line.split('');
-            if (index < characters.length) {
-                document.getElementById('hello').innerHTML += characters[index];
-                index++;
-            } else {
-                document.getElementById('hello').innerHTML += '<br>'; // 줄 바꿈
-                lineIndex++;
-                index = 0;
-            }
-        } else {
-            clearInterval(interval);
-        }
-    }
-</script>
-
+        context.beginPath();
+        context.moveTo(10, 10);   
+        context.lineTo(30, 10);   
+        context.arc(20, 30, 5, 0, 2 * Math.PI);
+        context.lineTo(32, 35);
+        context.lineTo(35, 30);
+        context.lineTo(40, 35);
+        context.lineTo(45, 30); 
+        context.arc(40, 40, 5, 0, 1 * Math.PI);
+        context.lineWidth = 3;
+        context.strokeStyle = "black";
+        context.stroke();
+    </script>
 </body>
 </html>

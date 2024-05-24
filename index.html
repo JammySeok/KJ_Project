@@ -1,16 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Introduce Myself</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-        }
-
         section {
             display: flex;
             align-items: center;
@@ -18,12 +14,6 @@
             padding: 10px;
             width: 100%;
             height: auto;
-        }
-
-        img {
-            padding: 10px;
-            width: 300px;
-            height: 400px;
         }
 
         .introduce {
@@ -51,6 +41,24 @@
             justify-content: center;
         }
 
+        fieldset{
+            margin: auto;
+            width: 80%;
+        }
+
+        fieldset p {
+            border: 1px solid gray;
+            margin: auto;
+            padding: 20px;
+            width: 90%;
+        }
+
+        #sign {
+            display: flex;
+            align-items: center;
+            justify-content: right;
+        }
+
         @media(max-width:1000px) {
             .content {
                 display: flex;
@@ -59,42 +67,8 @@
         }
     </style>
 
-</head>
-
-<body onload="startClock()">
-    <nav>
-        <a href="#">Introduction</a>
-        <a href="company.html">Company</a>
-        <a href="Plan.html">Plan</a>
-        <a href="about.html">About</a>
-    </nav>
-
-    <header> </header>
-
-    <section>
-        <div class="content">
-            <img src="img/jus.jpg">
-            <div class="introduce">
-                <div>
-                    <h2>ABOUT ME</h2>
-                    <p id="hello"> 백엔드 개발자를 꿈꾸고 있는 학생입니다! 저의 꿈을 응원해 주세요.
-                        꿈을 향해서 열심히 달려나가겠습니다. </p>
-                </div>
-                <br>
-                <div title="아직은 부족하지만 나중에는 할수있는게 많아질거에요!">
-                    <h2>CAPABILITY</h2>
-                    <p>HTML/CSS/JS, C, JAVA, Database, LINUX</p>
-                </div>
-                <br>
-                <div>
-                    <h2>CERTIFICATE</h2>
-                    <p>정보처리산업기사, 컴퓨터활용능력 1급, 워드프로세서</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <script>
+        // 한글자씩 출력
         var text = document.getElementById('hello').innerHTML;
         var lines = text.split('\n');
         document.getElementById('hello').innerHTML = '';
@@ -116,17 +90,8 @@
                     lineIndex++;
                     index = 0;
                 }
-                         
         }
-    </script>
 
-    <footer>
-        <h3>CONTACT ME</h3>
-        010-5115-1678 / jjh326326@naver.com
-        <p id="clock" style="background-color: aliceblue;"></p>
-    </footer>
-
-    <script>
         // 현재 페이지 머무른 시간
         var startTime;
 
@@ -156,6 +121,106 @@
                 obj.style.background = "red";
             }
         }
+    </script>
+</head>
+
+<body onload="startClock()">
+    <nav>
+        <a href="#">Introduction</a>
+        <a href="company.html">Company</a>
+        <a href="Plan.html">Plan</a>
+        <a href="about.html">About</a>
+    </nav>
+
+    <header> </header>
+
+    <section>
+        <div class="content">
+            <img style="padding: 10px; width: 300px; height: 400px;" src="img/jus.jpg">
+            <div class="introduce">
+                <div>
+                    <h2>ABOUT ME</h2>
+                    <p id="hello"> 백엔드 개발자를 꿈꾸고 있는 학생입니다! 저의 꿈을 응원해 주세요.
+                        꿈을 향해서 열심히 달려나가겠습니다. </p>
+                </div>
+                <br>
+                <div title="아직은 부족하지만 나중에는 할수있는게 많아질거에요!">
+                    <h2>CAPABILITY</h2>
+                    <p>HTML/CSS/JS, C, JAVA, Database, LINUX</p>
+                </div>
+                <br>
+                <div>
+                    <h2>CERTIFICATE</h2>
+                    <p>정보처리산업기사, 컴퓨터활용능력 1급, 워드프로세서</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <fieldset id="cover" style="margin-bottom: 50px;">
+        <legend> <h1>Cover letter</h1> </legend>
+        <h2 style="margin-left: 30px;">이루고 싶은 목표</h2>
+        <p style="font-size: 20px;">
+            작은 목표로는 대학 졸업 전에 기사 자격증을 취득하는 것뿐만 아니라, 적극적으로 다양한 프로젝트와 경험을 통해 서비스를 운영할 수 있는 능력을 키우고, 이를 토대로 누구나 인정할만한 퀄리티 높은 결과물을 개발하는 것을 목표로 하고 있습니다. 이러한 노력을 통해 나만의 기술적 역량을 키워 나가고, 최종적 목표로는 IT 시장에서 가장 뛰어난 인재로서 성장하여 산업과 사회에 기여하고자 합니다.
+        </p> <br>
+        <h2 style="margin-left: 30px;">성장 과정</h2>
+        <p style="font-size: 20px;">
+            어렸을 적부터 아버지의 컴퓨터 작업을 구경하며 시간을 보내는 나날들이 저의 컴퓨터에 대한 호기심과 관심을 자극했습니다. 그래서 남들보다는 빠르게 컴퓨터 하는 것을 접하게 되었고 다른 아이들이 장난감으로 노는 동안 저는 컴퓨터에 더 많은 시간을 보냈고, 그 결과로 컴퓨터 작업에 빠르게 익숙해졌습니다. <br><br>
+            고등학교 시절, 더 깊이 있는 지식을 탐구하고자 프로그래밍 언어와 네트워크 등에 대해 자발적으로 공부했습니다. 혼자서 공부하는 것만으로는 부족하다고 느껴, 대학교에서 관련과를 선택했습니다. 대학 생활을 하며 재미없었을 줄만 알았던 공부가 처음으로 재미있게 느껴졌습니다. 수업에서의 실습과 프로젝트들은 저에게 새로운 도전과 만족감을 주었습니다. 이에 더욱 힘을 내어 공부하며, 그 결과로 인생 처음으로 성적 우수자로 선정되어 전액 장학금을 받는 쾌거를 이뤘습니다. <br><br>
+            이러한 성과는 제가 컴퓨터에 대한 열정과 끈기를 지속적으로 발전시키고자 한 결과입니다. 별것 아니었지만 아버지의 영향으로 시작된 이 모든 것은 이제 저만의 역량과 지식으로 자리매김하고 있습니다. 앞으로 더 많은 도전과 발전있을 것이고, IT 지식에 대한 끊임없는 열정과 호기심은 저를 앞으로 나아가게 할 동력이 될 것입니다.
+        </p> <br>
+        <h2 style="margin-left: 30px;">최근 사회 이슈 중 중요하다고 생각하는 한가지</h2>
+        <p style="font-size: 20px;">
+            최근 사회 이슈 중 가장 중요한 것 중 하나는 인공지능(AI) 기술의 발전으로 인해 예술 분야에서도 혁신이 일어나고 있다는 점입니다. 미국 콜로라도에서 열린 미술 대회에서 AI가 제작한 작품이 수상하거나, 최근 교육 박람회에서 AI가 작곡한 곡이 공모전에서 선정되는 등의 사례가 늘고 있습니다. 이러한 현상은 AI가 예술 분야에서도 중요한 역할을 하고 있다는 증거로 볼 수 있습니다. <br><br>
+            그러나 이러한 발전은 부정적인 의문을 제기하고 있습니다. 예를 들어, AI가 창작물을 만들어냄에 따라 창작물의 저작권 문제나, 이를 어떻게 평가해야 할지에 대한 논란이 있습니다. 하지만 저는 이러한 현상이 예술 분야에 새로운 시각을 제공하고, 전통적인 예술가들과의 상호작용을 통해 예술과 기술이 함께 발전해 나갈 수 있는 기회를 제공한다고 생각합니다. <br><br> 
+            결국, 인간과 AI 간의 상호작용을 통해 예술과 기술이 더욱 발전하고 성장할 것으로 기대됩니다. 이러한 과정에서는 예술가와 기술자들이 함께 협력하고, 새로운 가능성을 모색하는 노력이 필요할 것입니다.
+        </p> <br>
+        <h2 style="margin-left: 30px;">프로젝트/과제 중 기술적으로 어려웠던 부분과 해결방안</h2>
+        <p style="font-size: 20px;">
+            과거에 리눅스 환경에서 Oracle을 설치하고 초기 세팅을 진행해야 했던 경험이 있습니다. 리눅스(CentOS)를 이전에 학습한 적은 있었지만, 실제로 환경을 구축해보는 일은 처음이었고, 이전에는 주로 윈도우 환경에서 MySQL을 다뤄왔습니다. 프로젝트를 시작하게 되었을 때, 여러 가지 어려움에 직면하게 되었습니다. <br><br>
+            첫 번째 어려움은 패치파일 설치 과정에서 발생한 문제였습니다. 이전에는 윈도우 환경에서 간단히 체크하고 넘어갔던 과정이었는데, 리눅스 환경에서는 초기 환경 설정 후에 설치를 진행해야 했습니다. 초기에는 이러한 차이를 인식하지 못하고 있었기 때문에 문제의 원인을 파악하는 데에도 많은 시간이 소요되었습니다. <br><br>
+            두 번째 어려움은 MySQL과는 달리 Oracle을 리눅스 환경에서 직접 운용해야 했던 점이었습니다. MySQL의 경우에는 Workbench를 이용하여 편리하게 작업할 수 있었던 반면, Oracle은 직접 서버를 설정하고 운용해야 했기 때문에 여러 가지 불편한 점이 있었습니다. <br><br>
+            이러한 어려움을 극복하기 위해 노력했습니다. 먼저, 문제 발생 시에는 인터넷 검색과 주변의 선임분들에게 조언을 구하며 원인을 파악하고 해결책을 모색했습니다. 또한, 윈도우와 리눅스 환경 간의 차이를 이해하고 적용하는 데에 주의를 기울였습니다. 특히, 초기 환경 설정의 중요성을 깨달았고, 이를 통해 나중에 유사한 문제에 대처할 수 있는 기초를 쌓을 수 있었습니다. <br><br>
+            이러한 경험을 통해, 기술적으로 복잡한 환경에서의 작업에 대한 이해와 대응력을 키울 수 있었습니다. 또한, 새로운 기술이나 환경에 대한 두려움보다는 문제 해결에 대한 의지와 노력이 중요하다는 것을 배웠습니다. 
+        </p> <br>
+        <h2 style="margin-left: 30px;">나의 역량</h2>
+        <p style="font-size: 20px;">
+            저는 많은 IT 분야에 대한 교육과 경험을 바탕으로 정보처리산업기사 자격증을 취득하고 발명경진대회에서 입상하는 등의 성과를 이뤘습니다. 대학에서 프로그래밍 언어, 네트워크, 리눅스, 데이터베이스 등 다양한 과목을 수강하며 이론적인 지식을 쌓는 동시에 실무적인 경험을 쌓았습니다. <br><br>
+            전에는 리눅스(CentOS 환경)에서 데이터베이스(Oracle)을 구축해 운영해보기도 했고, 현재는 웹 개발자(백엔드) 쪽으로 관심이 있어 웹 개발 분야에서 전문성을 키우기 위해 Java Spring 프레임워크를 중점적으로 학습하고 있으며, 최근에는 간단한 게시판을 개발하였습니다. 이를 통해 MVC 패턴을 적용하고, JPA를 활용하여 데이터베이스와의 상호작용을 구현하였으며, REST API를 설계하여 클라이언트와의 효율적으로 정보를 주고 받도록 했습니다.
+        </p> <br>
+
+        <div id="sign">
+        <h3>서명 : </h3> 
+        <canvas id="myCanvas" width="60" height="55"></canvas>
+        </div>
+    </fieldset>
+
+    <script>
+        var canvas = document.getElementById("myCanvas");
+        var context = canvas.getContext("2d");
+
+        context.beginPath();
+        context.moveTo(10, 10);   
+        context.lineTo(30, 10);   
+        context.arc(20, 30, 5, 0, 2 * Math.PI);
+        context.lineTo(32, 35);
+        context.lineTo(35, 30);
+        context.lineTo(40, 35);
+        context.lineTo(45, 30); 
+        context.arc(40, 40, 5, 0, 1 * Math.PI);
+        context.lineWidth = 3;
+        context.strokeStyle = "black";
+        context.stroke();
+    </script>
+    
+    <footer>
+        <h3>CONTACT ME</h3>
+        010-5115-1678 / jjh326326@naver.com
+        <p id="clock" style="background-color: aliceblue;"></p>
+    </footer>
+
+    <script>
+       
     </script>
 </body>
 
