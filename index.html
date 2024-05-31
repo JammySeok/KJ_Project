@@ -59,39 +59,9 @@
             justify-content: right;
         }
 
-        @media(max-width:1000px) {
-            .content {
-                display: flex;
-                flex-direction: column;
-            }
-        }
     </style>
 
     <script>
-        // 한글자씩 출력
-        var text = document.getElementById('hello').innerHTML;
-        var lines = text.split('\n');
-        document.getElementById('hello').innerHTML = '';
-
-        var index = 0;
-        var lineIndex = 0;
-        
-        setInterval(show, 200);
-
-        function show() {
-                var line = lines[lineIndex];
-                var characters = line.split('');
-                if (index < characters.length) {
-                    document.getElementById('hello').innerHTML += characters[index];
-                    index++;
-                } 
-                else {
-                    document.getElementById('hello').innerHTML += '<br>'; 
-                    lineIndex++;
-                    index = 0;
-                }
-        }
-
         // 현재 페이지 머무른 시간
         var startTime;
 
@@ -112,11 +82,11 @@
             else if(secTime > 60) obj.innerHTML = "현재 페이지 머문 시간: " + minTime % 60 + "분" + secTime % 60 + "초";
             else obj.innerHTML = "페이지 머문 시간: " + secTime % 60 + "초";
 
-            if(minTime == 30) { 
+            if(minTime == 30 && secTime == 0) { 
                 alert("30분이 지났어요.");
                 obj.style.background = "yellow";
             }
-            else if(horTime == 1) { 
+            else if(horTime == 1 && minTime == 0 && secTime == 0) { 
                 alert("1시간이 지났어요.");
                 obj.style.background = "red";
             }
@@ -128,8 +98,8 @@
     <nav>
         <a href="#">Introduction</a>
         <a href="company.html">Company</a>
+        <a href="Tech.html">Tech</a>
         <a href="Plan.html">Plan</a>
-        <a href="about.html">About</a>
     </nav>
 
     <header> </header>
@@ -156,6 +126,32 @@
             </div>
         </div>
     </section>
+
+    <script>
+        // 한글자씩 출력
+        var text = document.getElementById('hello').innerHTML;
+        var lines = text.split('\n');
+        document.getElementById('hello').innerHTML = '';
+
+        var index = 0;
+        var lineIndex = 0;
+        
+        setInterval(show, 200);
+
+        function show() {
+                var line = lines[lineIndex];
+                var characters = line.split('');
+                if (index < characters.length) {
+                    document.getElementById('hello').innerHTML += characters[index];
+                    index++;
+                } 
+                else {
+                    document.getElementById('hello').innerHTML += '<br>'; 
+                    lineIndex++;
+                    index = 0;
+                }
+        }
+    </script>
 
     <fieldset id="cover" style="margin-bottom: 50px;">
         <legend> <h1>Cover letter</h1> </legend>
@@ -185,8 +181,9 @@
         </p> <br>
         <h2 style="margin-left: 30px;">나의 역량</h2>
         <p style="font-size: 20px;">
-            저는 많은 IT 분야에 대한 교육과 경험을 바탕으로 정보처리산업기사 자격증을 취득하고 발명경진대회에서 입상하는 등의 성과를 이뤘습니다. 대학에서 프로그래밍 언어, 네트워크, 리눅스, 데이터베이스 등 다양한 과목을 수강하며 이론적인 지식을 쌓는 동시에 실무적인 경험을 쌓았습니다. <br><br>
-            전에는 리눅스(CentOS 환경)에서 데이터베이스(Oracle)을 구축해 운영해보기도 했고, 현재는 웹 개발자(백엔드) 쪽으로 관심이 있어 웹 개발 분야에서 전문성을 키우기 위해 Java Spring 프레임워크를 중점적으로 학습하고 있으며, 최근에는 간단한 게시판을 개발하였습니다. 이를 통해 MVC 패턴을 적용하고, JPA를 활용하여 데이터베이스와의 상호작용을 구현하였으며, REST API를 설계하여 클라이언트와의 효율적으로 정보를 주고 받도록 했습니다.
+            대학에서 프로그래밍 언어, 네트워크, 리눅스, 데이터베이스 등 다양한 과목을 수강하며 이론적인 지식을 쌓는 동시에 실무적인 경험을 쌓았습니다. 이를 기반으로 해서 정보처리산업기사 자격증을 취득하고 공모전 출품, 발명경진대회에서 입상하는 등의 성과를 이뤘습니다. <br><br>
+            저는 물리적 서버 환경의 설치 및 구성 경험이 있어서 서버 하드웨어 구성과 네트워크 인프라에 대한 지식을 보유하고 있습니다. 또한, 리눅스(CentOS 환경)에서 데이터베이스(Oracle)를 구축하고 운영해보았습니다. <br><br>
+            현재는 웹 개발자(백엔드) 쪽으로 관심이 있어 웹 개발 분야에서 전문성을 키우기 위해 Java Spring 프레임워크를 중점적으로 학습하고 있으며, 최근에는 간단한 게시판을 개발하였습니다. 이를 통해 MVC 패턴을 적용하고, JPA를 활용하여 데이터베이스와의 상호작용하게 만들었으며, API를 설계하여 클라이언트와의 효율적으로 정보를 주고 받도록 했습니다.
         </p> <br>
 
         <div id="sign">
@@ -218,10 +215,6 @@
         010-5115-1678 / jjh326326@naver.com
         <p id="clock" style="background-color: aliceblue;"></p>
     </footer>
-
-    <script>
-       
-    </script>
 </body>
 
 </html>

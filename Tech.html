@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduce Myself</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        #img {
+            display: flex;
+            justify-content: center;
+        }
+
+        img {
+            margin: 0 auto;
+            width: 700px;
+            height: 300px;
+        }
+
+        section {
+            margin: 50px;
+        }
+
+        span {
+            font-weight: bold;
+        }
+    </style>
+    <script>
+        // 현재 페이지 머무른 시간
+        var startTime;
+
+        function startClock() {
+            startTime = new Date();
+            var clock = document.getElementById("clock");
+            setInterval("stayTime(clock)", 1000);
+        }
+
+        function stayTime(obj) {
+            var currentTime = new Date();
+            var time = (currentTime - startTime) / 1000;
+            var secTime = parseInt(time);
+            var minTime = parseInt(secTime / 60);
+            var horTime = parseInt(minTime / 60);
+
+            if (minTime > 60) obj.innerHTML = "현재 페이지 머문 시간: " + horTime + "시간" + minTime % 60 + "분" + secTime % 60 + "초";
+            else if (secTime > 60) obj.innerHTML = "현재 페이지 머문 시간: " + minTime % 60 + "분" + secTime % 60 + "초";
+            else obj.innerHTML = "페이지 머문 시간: " + secTime % 60 + "초";
+
+            if (minTime == 30 && secTime == 0) {
+                alert("30분이 지났어요.");
+                obj.style.background = "yellow";
+            }
+            else if (horTime == 1 && minTime == 0 && secTime == 0) {
+                alert("1시간이 지났어요.");
+                obj.style.background = "red";
+            }
+        }
+    </script>
+</head>
+
+<body onload="startClock()">
+    <nav>
+        <a href="#">Introduction</a>
+        <a href="company.html">Company</a>
+        <a href="Tech.html">Tech</a>
+        <a href="Plan.html">Plan</a>
+    </nav>
+
+    <header></header>
+
+    <section>
+        <div id="img">
+            <img src="/img/Spring.png">
+            <img src="/img/SpringBoot.jpg">
+        </div>
+
+
+        <h2>Spring Framework</h2>
+        <div id="Spring">
+            <h3>Spring Framework?</h3>
+            <p>스프링 프레임워크는 자바 플랫폼을 위한 오픈 소스 애플리케이션 프레임워크로, 동적인 웹 사이트 및 기타 애플리케이션을 개발하기 위한 다양한 기능을 제공한다. 이를 통해 개발자들은 비즈니스
+                로직에 집중할 수 있으며, 스프링 프레임워크가 제공하는 다양한 기능들을 활용하여 효율적으로 애플리케이션을 개발할 수 있다. Spring 3요소라고 불리는 중요한 3가지 원리인
+                Ioc/DI, AOP, PSA가 있다. <br><br>
+
+                <span>Ioc/DI (제어 역전/의존성 주입)</span> <br>
+                IoC는 "제어의 역전"이라고도 불리며, 객체의 생성과 관리를 개발자가 아닌 프레임워크나 컨테이너에게 맡기는 디자인 패턴이다. DI는 "의존성 주입"을 의미하며, 객체가 직접 의존하는
+                객체를 생성하지 않고 외부에서 주입받는 것을 의미한다. 이를 통해 객체 간의 결합도를 낮추고 유연한 코드를 작성할 수 있다. 일반적으로 객체 간의 의존성은 개발자가 직접 코드로 구현하게
+                되는데, 이를 역전시켜 객체가 직접 의존성을 관리하는 것이 아니라 외부로부터 필요한 의존성을 주입받도록 하는 것이 IoC의 핵심이다. 이로써 객체 간의 의존성이 줄어들고, 유연하고 확장
+                가능한 코드를 작성할 수 있다. <br><br>
+
+                <span>AOP(관점 지향 프로그래밍)</span> <br>
+                핵심 비즈니스 로직과는 별개로 프로그램의 여러 부분에서 공통적으로 발생하는 기능을 모듈화하여 중복을 줄이고 코드의 가독성과 유지보수성을 향상시키는 프로그래밍 패러다임이다.
+                관점 지향 프로그래밍을 지원하여 로깅, 트랜잭션, 보안 등 여러 모듈에서 공통적으로 사용하는 기능을 분리하여 관리할 수 있도록 cross-cutting concern 모듈화 기능을
+                제공한다.
+                AOP는 프록시 패턴을 사용하여 구현되며, 주로 Advice, Joinpoint, Pointcut, Aspect의 개념들을 사용하여 프로그램을 모듈화한다. <br><br>
+
+                <span>PSA(서비스 추상화)</span> <br>
+                다양한 서비스 인터페이스들을 일관된 방식으로 다룰 수 있도록 하는 개념이다. PSA의 핵심은 추상화(abstraction)에 있으며, 이를 통해 개발자는 구체적인 구현체에 의존하지 않고
+                인터페이스를 통해 서비스를 사용할 수 있다. 유연성과 확장성을 제공하며, 특히 다양한 환경에서의 코드 이식성을 높인다. <br><br>
+
+                이러한 특징들은 스프링 프레임워크를 사용하여 개발자가 더욱 효율적으로 자바 기반의 애플리케이션을 개발할 수 있도록 도와준다.
+            </p>
+        </div> <br>
+
+        <h2>Spring Boot</h2>
+        <div id="SpringBoot">
+            <p> 스프링 프레임워크는 초기 설정만 잘 해주면 매우 효과적인 프레임워크이다. 그러나 스프링 생태계가 지속적으로 성장하면고 다양한 기능과 라이브러리가 추가되면서 프로젝트에 적용해야 하는 외부
+                라이브러리의 양이 증가하고 이로인해 초기 설정에 필요한 시간과 노력도 증가하고 있다. 이러한 상황에서 등장한 것이 스프링 부트이다. <br><br>
+
+            <h3>Spring Boot?</h3>
+            스프링 부트는 스프링 생태계에 속하는 프로젝트 중 하나로, 스프링 프레임워크를 기반으로 한 애플리케이션을 더욱 쉽게 생성하고 배포할 수 있도록 개발된 모듈이다. 개발할 때 필요한 복잡한 설정들은
+            Spring Boot가 해주기 때문에 개발자는 복잡한 설정에 시간을 투자할 필요 없이 빠르게 애플리케이션을 개발할 수 있도록 지원한다. <br>
+            <br>
+            <span>내장 서버</span> : 기본 설정을 자동화하고 톰캣과 같은 서버를 내장하여 별도의 서버 설정이 필요하지 않습니다. 이로써 개발자는 서버을 설정하는데 많은 시간을 사용할 필요가
+            없어진다. <br>
+            <span>편리한 의존성 & 권장 버전 관리</span> : 스프링 프레임워크에서는 각각의 라이브러리를 수동으로 선택하고 그에 적합한 버전을 설정해야 했다. 라이브러리 간의 호환성 문제가 발생할
+            수 있었고, 이에 대한 해결을 위해 다시 라이브러리 설정을 조정해야 하는 번거로움이 있었다. 하지만 스프링부트는 개발자는 라이브러리 및 버전을 일일이 설정할 필요 없이 스프링 부트가 제공하는
+            툴을 통해 라이브러리를 관리할 수 있다. 예를들어 'org.springframework.boot:spring-boot-starter-web' 코드 한 줄로 웹에 대한 라이브러리를 쉽게 추가하고
+            관리할 수 있다.<br>
+            <span>자동 구성</span> : 스프링 부트는 자주 사용되는 여러 빈들을 자동으로 등록해주어 개발자가 번거로운 설정 작업을 최소화할 수 있다. 예를 들어, JdbcTemplate,
+            DataSource, TransactionManager 등의 빈들을 자동으로 등록하여 개발자가 이를 직접 설정할 필요 없이 사용할 수 있습니다. 이를 통해 개발자는 핵심 비즈니스 로직에 더욱
+            집중할 수 있다. </p>
+        </div> <br><br><br>
+
+        <img src="/img/AWS.png" style="display: flex; justify-content: center;">
+
+        <h2>AWS</h2>
+        <div id="AWS">
+            <p>
+                AWS는 Amazon Web Services의 약자로, 아마존닷컴의 클라우드 컴퓨팅 서비스다. 이를 통해 기업이나 개인이 필요한 IT 인프라를 구축하고 관리하기 위해 물리적 서버를 구매하거나 유지보수하는 번거로움 없이 필요한 만큼의 컴퓨팅 자원을 사용할 수 있게 해준다.
+                아래의 내용은 AWS가 제공하는 핵심 서비스이다. <br><br>
+
+                <span>AWS EC2</span> : 가상 서버를 제공하는 서비스로, 사용자는 필요에 따라 컴퓨팅 리소스를 확장하거나 축소할 수 있다.<br>
+                <span>AWS EBS</span> : EC2 인스턴스에 사용할 수 있는 영구적인 블록 수준 스토리지 서비스다. 데이터를 저장하고 백업하며, EC2 인스턴스 간에 데이터를 이동할 수 있다.<br>
+                <span>AWS ELB</span> : 여러 EC2 인스턴스 사이에 들어오는 트래픽을 분산하는 로드 밸런서 서비스다. <br>
+                <span>AWS RDS</span> : 관계형 데이터베이스를 쉽게 설정, 운영 및 확장할 수 있도록 해주는 관리형 데이터베이스 서비스다. MySQL, PostgreSQL, Oracle, SQL Server 등 다양한 데이터베이스 엔진을 지원한다.<br>
+                <span>AWS S3</span> : 객체 스토리지 서비스로, 사용자가 데이터를 안전하게 저장하고 검색할 수 있도록 합니다. 대용량 파일의 저장, 웹 사이트 호스팅, 백업 및 애플리케이션 데이터 저장 등에 사용된다.<br>
+                <span>Route 53</span> :  DNS 웹 서비스로, 사용자의 도메인 이름을 관리하고 트래픽을 라우팅 한다.<br>
+                <span>AWS IAM</span> : AWS 리소스에 대한 액세스를 관리하고 보안을 강화하는 서비스로, 사용자와 그룹에 대한 권한을 제어하고 중요한 자격 증명을 안전하게 관리한다.<br>
+                <span>AWS SDK</span> : AWS SDK는 다양한 프로그래밍 언어로 AWS 서비스를 사용할 수 있는 라이브러리와 도구 모음입니다. 이를 통해 개발자는 AWS 리소스를 프로그래밍 방식으로 관리하고 통합할 수 있다.<br><br>
+
+                기업이나 개발자들이 IT 인프라를 구축하고 운영하기 위한 다양한 도구와 서비스를 제공한다. 위의 AWS 서비스들을 이용해 클라우드 기반의 다양한 웹 애플리케이션 및 서비스를 구축할 수 있을 것이다.
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <h3>CONTACT ME</h3>
+        010-5115-1678 / jjh326326@naver.com
+        <p id="clock" style="background-color: aliceblue;"></p>
+    </footer>
+</body>
+
+</html>
